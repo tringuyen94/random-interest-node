@@ -32,12 +32,12 @@ db.once('open', () => {
          if (dayDiff > 28) {
             // Remove the document(s) with the oldest date
             await Calendar.deleteMany({ date: oldestDate })
-         }
-         // Generate new Calendar for today
-         const newCalendar = generateData(30);
+            // Generate new Calendar for today
+            const newCalendar = generateData(1);
 
-         // Save the new Calendar to the Calendarbase
-         await Calendar.insertMany(newCalendar);
+            // Save the new Calendar to the Calendarbase
+            await Calendar.insertMany(newCalendar);
+         }
       })
       .catch(error => console.error(error))
    console.log('Connected Database')

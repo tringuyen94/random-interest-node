@@ -30,7 +30,7 @@ const generateData = async (days) => {
 
       data.push({ date, interest, isWin });
    }
-   await Calendar.insertMany(data)
+   return data
 }
 
 const getDays = (req, res, next) => {
